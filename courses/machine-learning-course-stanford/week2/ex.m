@@ -1,9 +1,26 @@
-%% Ex1.m
+%% Machine Learning Online Class - Exercise 1: Linear Regression
+
+%% Part 1: Basic Function Warm Up
+fprintf('Running warmUpExercise file...');
+warmUpExercise()
+
+fprintf('Program paused. Press enter to continue.\n');
+pause;
+
+%% Part 2: Plotting data
+fprintf('Plotting Data...');
 data = load('ex1data1.txt');    % read comma separated data
 X = data(:,1); y = data(:,2);
 m = length(y);                  % number of training examples
 
-plot(x,y,'rx','MarkerSize',10);             % plot data
-ylabel('Profit in $10,000s');               % set y-axis label
-xlabel('Population of City in 10,000s');    % set x-axis label
+% Plot Data
+plotData(X,y);
 
+fprintf('Program paused. Press enter to continue.\n');
+pause;
+
+%% Part 3: Cost and Gradient Descent
+X = [ones(m,1),data(:,1)];      % add a column of ones to x
+theta = zeros(2,1);             % initialize fitting parameters
+iterations = 1500;
+alpha = 0.01;                   % learning rate
