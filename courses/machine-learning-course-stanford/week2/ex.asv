@@ -26,4 +26,3 @@ theta = zeros(2,1);             % initialize fitting parameters
 iterations = 1500;
 alpha = 0.01;                   % learning rate
 
-fprintf('\nTesting cost function ...\n')
